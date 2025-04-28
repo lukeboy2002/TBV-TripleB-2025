@@ -33,45 +33,10 @@
     @livewireStyles
 </head>
 <body class="font-sans antialiased">
+<x-header/>
 <div class="min-h-screen bg-fixed bg-top bg-no-repeat bg-cover"
      style="background-image: linear-gradient(to bottom, rgba(64, 64, 64, 0), #0a0a0a 60%), url('{{ asset('storage/assets/bg-top.jpg') }}')">
 
-    <x-banner/>
-    <x-tbv-header/>
-
-    @livewire('navigation-menu')
-
-    <div class="min-h-screen pt-[6.5rem] px-4 sm:px-0">
-        <!-- Page Heading -->
-        @if (isset($hero))
-            <hero class="bg-gray-50 dark:bg-gray-700">
-                <div class="relative h-40 md:h-56 lg:h-72 w-full">
-                    {{ $hero }}
-                </div>
-            </hero>
-        @endif
-
-        <!-- Page Content -->
-        @if (isset($side))
-            <div class="max-w-7xl mx-auto flex flex-wrap py-4 sm:px-6 lg:px-8">
-                <main class="w-full md:w-3/4 flex flex-col px-3">
-                    {{ $slot }}
-                </main>
-                <aside class="w-full md:w-1/4 flex flex-col px-3">
-                    {{ $side }}
-                </aside>
-            </div>
-        @else
-            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                {{ $slot }}
-            </div>
-        @endif
-    </div>
-
-    {{--    <x-footer />--}}
 </div>
-@stack('modals')
-
-@livewireScripts
 </body>
 </html>
